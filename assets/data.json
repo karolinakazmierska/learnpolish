@@ -1,0 +1,137 @@
+{
+    "situations": {
+        "bar": {
+            "icon": "glass",
+            "topics": {
+                "table": {
+                    "text": "Ask about table availability",
+                    "phrases": [
+                        { "EN": "I'm sorry", "PL": "Przepraszam", "soundID": 1 },
+                        { "EN": "Please", "PL": "Proszę", "soundID": 2 }
+                    ]
+                },
+                "ordering": {
+                    "text": "Order at the bar",
+                    "phrases": [
+                        { "EN": "I'd like a beer", "PL": "Poproszę piwo", "soundID": 3 },
+                        { "EN": "Please", "PL": "Proszę", "soundID": 4 }
+                    ]
+                },
+                "vocab": {
+                    "text": "Essential vocabulary",
+                    "phrases": [
+                        { "EN": "glass", "PL": "szklanka", "soundID": 5 },
+                        { "EN": "beer", "PL": "piwo", "soundID": 6 },
+                        { "EN": "wine", "PL": "wino", "soundID": 7 },
+                        { "EN": "straw", "PL": "słomka", "soundID": 8 },
+                        { "EN": "the bill", "PL": "rachunek", "soundID": 9 }
+                    ]
+                }
+            }
+        },
+        "museum": {
+            "icon": "building",
+            "topics": {
+                "tickets": {
+                    "text": "Buy a museum ticket",
+                    "phrases": [
+                        { "EN": "One adult ticket please", "PL": "Poproszę bilet normalny", "soundID": 10 },
+                        { "EN": "Please", "PL": "Proszę", "soundID": 11 }
+                    ]
+                },
+                "exhibition": {
+                    "text": "Ask about exhibition",
+                    "phrases": [
+                        { "EN": "What exhibition is this?", "PL": "Co to za wystawa?", "soundID": 12 },
+                        { "EN": "Please", "PL": "Proszę", "soundID": 13 }
+                    ]
+                },
+                "vocab": {
+                    "text": "Essential vocabulary",
+                    "phrases": [
+                        { "EN": "exhibition", "PL": "wystawa", "soundID": 14 },
+                        { "EN": "painting", "PL": "obraz", "soundID": 15 },
+                        { "EN": "ticket", "PL": "bilet", "soundID": 16 },
+                        { "EN": "tour guide", "PL": "przewodnik", "soundID": 17 },
+                        { "EN": "sculpture", "PL": "rzeźba", "soundID": 18 }
+                    ]
+                }
+            }
+        },
+        "train": {
+            "icon": "train",
+            "topics": {
+                "tickets": {
+                    "text": "Buy a train ticket",
+                    "phrases": [
+                        { "EN": "One train ticket please", "PL": "Poproszę bilet na pociąg", "soundID": 19 },
+                        { "EN": "Please", "PL": "Proszę", "soundID": 20 }
+                    ]
+                },
+                "vocab": {
+                    "text": "Essential vocabulary",
+                    "phrases": [
+                        { "EN": "train", "PL": "pociąg", "soundID": 21 },
+                        { "EN": "platform", "PL": "peron", "soundID": 22 },
+                        { "EN": "track", "PL": "tor", "soundID": 23 },
+                        { "EN": "car", "PL": "wagon", "soundID": 24 },
+                        { "EN": "department", "PL": "przedział", "soundID": 25 },
+                        { "EN": "ticket", "PL": "bilet", "soundID": 26 }
+                    ]
+                }
+            }
+        }
+    },
+    "places": [
+        {
+            "name": "Hard Rock Cafe",
+            "category": "bar",
+            "coordinates": {
+                "latitude": 52.2301084,
+                "longitude": 21.0004984
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "name": "Muzeum Powstania Warszawskiego",
+            "category": "museum",
+            "coordinates": {
+                "latitude": 52.232324,
+                "longitude": 20.9789653
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "name": "PiwPaw",
+            "category": "bar",
+            "coordinates": {
+                "latitude": 52.2283154,
+                "longitude": 21.0118031
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "name": "Cuda na Kiju",
+            "category": "bar",
+            "coordinates": {
+                "latitude": 52.2313942,
+                "longitude": 21.0201613
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "name": "Muzeum POLIN",
+            "category": "museum",
+            "coordinates": {
+                "latitude": 52.2493882,
+                "longitude": 20.9911675
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+    ],
+    "icons": [
+        { "name": "bar", "icon": "glass", "color": "red" },
+        { "name": "museum", "icon": "building", "color": "blue" },
+        { "name": "train", "icon": "train", "color": "yellow" }
+    ]
+}
