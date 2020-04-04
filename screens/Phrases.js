@@ -63,6 +63,7 @@ class Phrases extends React.Component {
         return phrases.map((obj, i) => {
             let cssEN = {lineHeight: 52};
             let cssPL = {backgroundColor: '#2077d7', color: '#fff', lineHeight: 52};
+            if (i%2==0) { cssEN = {lineHeight: 52, backgroundColor: 'f1eeee'} }
             let css = (obj['visible'] == 'EN' ? cssEN : cssPL);
             return (
                 <TouchableOpacity
@@ -106,11 +107,10 @@ class Phrases extends React.Component {
                     <ActivityIndicator size="large" color="#2077d7" />
                     :
                     <View>
-                        <Text style={styles.breadcrumbs}>
-                            <Text style={{textTransform:'capitalize'}}>{this.props.navigation.getParam('situation')} </Text>
-                            <Icon name='chevron-right' size={10} color="#2077d7" />
-                            <Text> {this.state.topicDesc}</Text>
-                        </Text>
+                        <View style={styles.breadcrumbs}>
+                            <Text style={styles.breadcrumbsTitle}>{this.props.navigation.getParam('situation')}</Text>
+                            <Text style={styles.breadcrumbsSubtitle}>{this.state.topicDesc}</Text>
+                        </View>
                         {this.props.navigation.getParam('topic') != 'vocab' ? <Text style={styles.instructions}>Tap on a phrase to see its translation</Text> : null}
                         {this.props.navigation.getParam('topic') == 'vocab' ? this.renderVocab(this.state.phrases) : this.renderPhrases(this.state.phrases)}
                     </View>
@@ -142,16 +142,32 @@ const styles = StyleSheet.create({
     },
     instructions: {
         textAlign: 'center',
-        paddingVertical: 10,
-        color: '#bebebe'
+        paddingVertical: 8,
+        color: '#fff',
+        fontSize: 10,
+        backgroundColor: '#dc2d15'
     },
     breadcrumbs: {
         fontSize: 16,
         textAlign: 'center',
-        backgroundColor: '#fff',
-        color: '#2077d7',
+        backgroundColor: '#dc2d15',
+        color: '#fff',
         paddingVertical: 6,
         fontWeight: 'bold',
-        fontSize: 13
+        fontSize: 18,
+        display: 'flex',
+        alignItems: 'center'
+    },
+    breadcrumbsTitle: {
+        textTransform:'capitalize',
+        color: '#fff',
+        fontSize: 22,
+        paddingVertical: 6,
+        fontWeight: 'bold'
+    },
+    breadcrumbsSubtitle: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 16
     }
 })
