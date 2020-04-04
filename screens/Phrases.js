@@ -10,6 +10,7 @@ class Phrases extends React.Component {
         this.state = {
             data: require('./../assets/data.json'),
             phrases: [],
+            topicDesc: '',
             isLoading: true
         }
     }
@@ -17,6 +18,7 @@ class Phrases extends React.Component {
         let topic = this.props.navigation.getParam('topic');
         let situation = this.props.navigation.getParam('situation');
         if (topic && situation) {
+            const topicDesc = this.state.data.situations[situation].topics[topic].text;
             const phrases =  this.state.data.situations[situation].topics[topic].phrases;
             const phrasesList = [];
             if (phrases) {
@@ -26,6 +28,7 @@ class Phrases extends React.Component {
                 })
                 this.setState({
                     phrases: phrasesList,
+                    topicDesc: topicDesc,
                     isLoading: false
                 })
             }
@@ -77,13 +80,40 @@ class Phrases extends React.Component {
             )
         })
     }
+    renderVocab = (phrases) => {
+        return phrases.map((obj, i) => {
+            return (
+                <TouchableOpacity
+                    style={[styles.phraseWrapper]}
+                    key={i}
+                    onPress={() => this.toggleLanguage(obj)}
+                >
+                    <View style={{lineHeight: 52, flexDirection:'row', flexWrap:'wrap'}}>
+                        <View style={{marginRight: 10, width: 130, borderRightWidth: 2, borderColor: "#dfdfdf",}}><Text style={{lineHeight: 52}}>{obj['EN']}</Text></View>
+                        <View><Text style={{lineHeight: 52}}>{obj['PL']}</Text></View>
+                    </View>
+                    <TouchableOpacity style={styles.soundIcon} onPress={() => this.playSound(obj['soundID'])}>
+                        <Icon name='play-circle' size={40} color="#2077d7" />
+                    </TouchableOpacity>
+                </TouchableOpacity>
+            )
+        })
+    }
     render() {
         return(
             <View style={styles.container}>
                 {this.state.isLoading ?
                     <ActivityIndicator size="large" color="#2077d7" />
                     :
-                    this.renderPhrases(this.state.phrases)
+                    <View>
+                        <Text style={styles.breadcrumbs}>
+                            <Text style={{textTransform:'capitalize'}}>{this.props.navigation.getParam('situation')} </Text>
+                            <Icon name='chevron-right' size={10} color="#2077d7" />
+                            <Text> {this.state.topicDesc}</Text>
+                        </Text>
+                        {this.props.navigation.getParam('topic') != 'vocab' ? <Text style={styles.instructions}>Tap on a phrase to see its translation</Text> : null}
+                        {this.props.navigation.getParam('topic') == 'vocab' ? this.renderVocab(this.state.phrases) : this.renderPhrases(this.state.phrases)}
+                    </View>
                 }
             </View>
         )
@@ -109,5 +139,19 @@ const styles = StyleSheet.create({
         paddingHorizontal: 24,
         display: 'flex',
         justifyContent: 'center'
+    },
+    instructions: {
+        textAlign: 'center',
+        paddingVertical: 10,
+        color: '#bebebe'
+    },
+    breadcrumbs: {
+        fontSize: 16,
+        textAlign: 'center',
+        backgroundColor: '#fff',
+        color: '#2077d7',
+        paddingVertical: 6,
+        fontWeight: 'bold',
+        fontSize: 13
     }
 })

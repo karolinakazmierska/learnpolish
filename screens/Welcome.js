@@ -4,16 +4,15 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const windowWidth = Dimensions.get('window').width;
 
-// @todo: render TouchableOpacity with cities from a list of cities
-
 class Welcome extends React.Component {
+
     render() {
         return (
             <View style={styles.container}>
                 <Image style={styles.img} source={require('./../assets/warsaw.jpg')} resizeMode={'contain'} />
                 <ScrollView style={styles.scroll}>
                     <TouchableOpacity
-                        onPress={ () => this.props.navigation.navigate('Situations') }
+                        onPress={ () => this.props.navigation.navigate('Situations', {title: 'Navigated'}) }
                         style={[styles.btn, styles.btnBlue]}
                     >
                         <Text style={styles.title}>Learn Polish in everyday situations</Text>

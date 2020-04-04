@@ -34,7 +34,7 @@ class Situations extends React.Component {
                 <TouchableOpacity
                     style={styles.imageWrapper}
                     activeOpacity={0.8}
-                    onPress={() => this.props.navigation.navigate('Topics', {name: obj.text})}>
+                    onPress={() => this.props.navigation.navigate('Topics', {name: obj.text, title: 'WHATEVER'})}>
                     <Icon name={obj.icon} size={40} color="#fff" />
                 </TouchableOpacity>
                 <Text  style={styles.situationText}>{obj.text}</Text>
