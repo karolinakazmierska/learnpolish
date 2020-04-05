@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const windowWidth = Dimensions.get('window').width;
 
 class Welcome extends React.Component {
-
     render() {
         return (
             <View style={styles.container}>
